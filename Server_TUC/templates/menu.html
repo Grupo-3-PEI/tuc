@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+  <title>T U C</title>
+
+  <!-- Font Awesome Icons -->
+  
+  <link href="{{url_for('static',filename='/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+  
+  <!-- Plugin CSS -->
+  <link href="{{url_for('static',filename='/vendor/magnific-popup/magnific-popup.css')}}" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="{{url_for('static',filename='/css/creative.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static',filename='/lib/ol.css')}}">
+  <meta http-equiv="pragma" content="no-cache" />
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">T U C</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#scooterList">Scooter list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#location">Location</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#geofencing">Geofencing</a>
+          </li>
+          <li class="nav-item">
+		  <a class="nav-link js-scroll-trigger" href="{{url_for('index')}}">LOG OUT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Overwiew Section -->
+  <section class="page-section masthead" style="height: 925px;" id="Overwiew">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-15 text-center">
+          <br><br>
+          <h2 class="text-black mt-0" style="font-size:5vw"><b>T U C</b></h2>
+          <p class="text-black-75 font-weight mb-1" style="font-size:1.5vw"><b>Trotinetes Universitárias Conectadas</b></p>  
+          <br><br><br><br><br>     
+        </div>
+      </div>
+      <div class="row " style="position: center;">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <a href="#scooterList"><i class="fas fa-4x fa-list mb-4" style="color: #f4a460;"></i></a>
+            <p></p><a href="#scooterList" class="menuF"><h4 class="h4 mb-2w"><b>SCOOTER LIST</b></h4></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <a href="#users"><i class="fas fa-4x fa-user text-black mb-4" style="color: #f4a460;"></i> </a>
+            <p></p><a href="#users" class="menuF"><h4 class="h4 mb-2"><b>USERS</b></h4></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <a href="#location"><i class="fas fa-4x fa-map-marker text-black mb-4" style="color: #f4a460;"></i></a>
+            <p></p><a href="#location" class="menuF"><h4 class="h4 mb-2"><b>LOCATION</b></h4></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <a href="#geofencing"><i class="fa fa-4x fa-draw-polygon mb-4 text-black" style="color: #f4a460;"></i></a>
+            <p></p><a href="#geofencing" class="menuF"><h4 class="h4 mb-2"><b>GEOFENCING</b></h4></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scooter List Section -->
+  <section class="page-section bg-primary" id="scooterList">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-15 text-center">
+          <h2 class="text-black mt-0" style="font-size:2vw; color:#ffffff"><b>SCOOTER LIST</b></h2>
+          <hr class="divider light my-8">
+          <div class="tableheader">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <thead>
+                <tr>
+                  <th><b>ID</b></th>
+                  <th><b>Status</b></th>
+                  <th><b>Battery</b></th>
+                  <th><b>Geofencing</b></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tablecontent">
+            <table id ="trot" cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <!--Javascript-->
+              </tbody>
+            </table>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- users Section -->
+<section class="page-section bg-dark" id="users">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-15 text-center">
+        <h2 class="text-white mt-0" style="font-size:2vw"><b>USERS</b></h2>
+        <hr class="divider light my-8">
+        <div class="tableheader2">
+          <table id="tableUser" cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                <th><b>ID</b></th>
+                <th><b>Name</b></th>
+                <th><b>E-mail</b></th>
+                <th></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tablecontent2">
+          <table id="tableUser2" cellpadding="0" cellspacing="0" border="0">
+            <tbody id = "tableUsers">
+              <!---Javascript-->
+            </tbody>
+            <tfoot>
+              <tr>
+                <form accept-charset="ISO-8859-1" action="#" method="post"></form>
+                  <td><input type="text" name="ID" id="idUser"></td>
+                  <td><input type="text" name="Name" id="name"></td>
+                  <td><input type="text" name="Email" id="mail"></td>
+                  <td><input type="submit" class="mais" id="add" value="ADD"/></td>
+                </form>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Scooter Location Section -->
+  <section class="page-section bg-primary" id="location">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-15 text-center">
+          <h2 class="text-black mt-0" style="font-size:2vw; color:#ffffff"><b>LOCATION</b></h2>
+          <hr class="divider light my-8">
+          <div id='js-map' class='mapMenu' style="width:1000px; height:500px;"></div>
+          <div>
+            <p></p>
+            <div class="icons">
+              <p id="icon"><i class="fas fa-circle" style="color: green;"></i><b>   - AVAILABLE</b></p>
+              <p id="icon"><i class="fas fa-circle" style="color: red;"></i><b>   - IN USE </b></p>
+            </div>
+          </div>
+          <div id="popup" class="ol-popup">
+            <div id="popup-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- geofencing Section -->
+  <section class="page-section bg-dark" id="geofencing">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-15 text-center">
+          <h2 class="text-white mt-0" style="font-size:2vw"><b>GEOFENCING</b></h2>
+          <hr class="divider light my-8">
+          <div id='js-map2' class='mapMenu' style="width:1000px; height:500px;"></div>
+          <div>
+            <input type="submit" class="confirmDraw" id="confirmDraw" value="CONFIRM"/>
+            <input type="submit" class="modifyDraw" id="modifyDraw" value="MODIFY"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for('static',filename='/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{url_for('static',filename='/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script src="{{url_for('static',filename='/vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{url_for('static',filename='/js/creative.min.js')}}"></script>
+  <script src="{{url_for('static',filename='/main.js')}}"></script>
+  <script src="{{url_for('static',filename='/lib/ol.js')}}"></script>
+
+</body>
+
+</html>

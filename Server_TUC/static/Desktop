@@ -1,0 +1,153 @@
+window.onload = init;
+
+function init(){
+    const map = new ol.Map({
+        view: new ol.View({
+            center: [-963767.2963970036, 4957997.271053271],
+            zoom: 14,
+            maxZoom: 50,
+        }),
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        target: 'js-map'      
+    })
+
+    map.on('click', function(e){
+        console.log(e.coordinate);
+    })
+
+    map.addControl(new ol.control.FullScreen());
+
+    // vector layers
+    const circleStyle = new ol.style.Circle({
+        fill: new ol.style.Fill({
+            color: [245, 49, 5, 1]
+        }),
+        radius: 10
+    })
+
+    const tucs = new ol.layer.VectorImage({
+        source: new ol.source.Vector({
+            url: '/map1.geojson',
+            format: new ol.format.GeoJSON()
+        }),
+        visible: true,
+        style: new ol.style.Style({
+            image: circleStyle
+        })
+    })
+    
+    map.addLayer(tucs);
+
+    map.on('click', function(e){
+        map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
+            console.log(feature);
+        })
+    })
+
+}
+
+function deleteRow(btn) {
+    var row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+
+// adicionar users à tabela
+$(document).ready(function(){
+    $("#add").on('click', function(){
+        $("#tableUser2 tr:last").after('<tr><td>'+$('#idUser').val()+'</td><td>'+$('#name').val()+'</td><td>'+$('#mail').val()+'</td></tr>');
+        
+        var sendData = {
+            id: $('#idUser').val(),
+            name: $('#name').val(),
+            email: $('#mail').val(),
+        }
+
+        $.ajax({
+            url:'/add_user',
+            type:'POST',
+            data: sendData,
+            success: function(sendData) {
+            }
+        });
+    });
+});
+
+function loadTrots(data){
+    var data_string = data.toString()
+    var allRows = data_string.split(/\r?\n|\r/);
+    var table = "<table>";
+    for(var singleRow = 1; singleRow<allRows.length;singleRow++){
+        if(singleRow == 0){
+            table += "<tr>";
+        } else{
+            table += "<tr>";
+        }
+
+        var rowCells = allRows[singleRow].split(';');
+        for(var rowSingleCell=0; rowSingleCell<rowCells.length; rowSingleCell++){
+            if(singleRow == 0){
+                table += "<th>";
+                table += rowCells[rowSingleCell];
+                table += "</th>";
+            } else{
+                table += "<td>";
+                table += rowCells[rowSingleCell];
+                table += "</td>";
+            }
+        }
+
+        if(singleRow == 0){
+            table += "</tr>";
+        } else{
+            table += "</tr>";
+        }
+    }
+    $("#trot").append(table);
+}
+
+function loadUsers(data){
+    var data_string = data.toString()
+    var allRows = data_string.split(/\r?\n|\r/);
+    var table = "<table>";
+    for(var singleRow=1; singleRow<allRows.length;singleRow++){
+        if(singleRow == 0){
+            table += "<tr>";
+        } else{
+            table += "<tr>";
+        }
+ 
+        var rowCells = allRows[singleRow].split(';');
+        for(var rowSingleCell=0; rowSingleCell<rowCells.length; rowSingleCell++){
+            if(singleRow == 0){
+                table += "<th>";
+                table += rowCells[rowSingleCell];
+                table += "</th>";
+            } else{
+                table += "<td>";
+                table += rowCells[rowSingleCell];
+                table += "</td>";
+            }
+        }
+ 
+        if(singleRow == 0){
+            table += "</tr>";
+        } else{
+            table += "</tr>";
+        }
+    }
+    $("#tableUser2").append(table);
+}
+ 
+$.ajax({
+    url:'/user_list',
+    dataType:"text",
+}).done(loadUsers)
+
+$.ajax({
+    url:'/scooter_list',
+    dataType:"text",
+}).done(loadTrots)

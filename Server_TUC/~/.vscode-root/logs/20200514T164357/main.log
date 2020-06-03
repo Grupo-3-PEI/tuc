@@ -1,0 +1,16 @@
+[2020-05-14 16:43:57.839] [main] [info] update#setState idle
+[2020-05-14 16:44:27.848] [main] [info] update#setState checking for updates
+[2020-05-14 16:44:27.850] [main] [info] update#setState idle
+[2020-05-14 17:44:27.880] [main] [info] update#setState checking for updates
+[2020-05-14 17:44:27.882] [main] [info] update#setState idle
+[2020-05-14 18:44:27.911] [main] [info] update#setState checking for updates
+[2020-05-14 18:44:28.110] [main] [info] update#setState idle
+[2020-05-14 19:44:28.001] [main] [info] update#setState checking for updates
+[2020-05-14 19:44:28.046] [main] [info] update#setState idle
+[2020-05-14 20:44:28.066] [main] [info] update#setState checking for updates
+[2020-05-14 20:44:28.629] [main] [info] update#setState idle
+[2020-05-14 21:22:29.866] [main] [info] update#setState checking for updates
+[2020-05-14 21:22:31.453] [main] [error] Error: ENOENT: no such file or directory, lstat '/snap/code/current'
+[2020-05-14 21:22:31.453] [main] [info] update#setState idle
+[2020-05-14 21:22:39.955] [main] [info] update#setState checking for updates
+[2020-05-14 21:22:39.985] [main] [info] update#setState ready
